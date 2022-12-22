@@ -64,4 +64,4 @@ contract lotteryApp {
 //  0x0aCbADC223585C43dF31f81265d412f90e160Dd7
 
 // Custom Address in ganache
-// 0xbA38bB2C96DC6B4ff1F5393d881fd29a8F8e9F4C
+//  0xbA7F90e9737d62234376Df31c5a8810d0e249e1C
