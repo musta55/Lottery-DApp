@@ -2,13 +2,15 @@ import React, { useState, useEffect } from "react";
 import getWeb3 from "./getWeb3";
 import Lottery from "./contracts/Lottery.json";  // abi of lottery smart contract
 import "./App.css";
-import Manager from "./components/Manager.js";
+// import Manager from "./components/Manager.js";
+import Players from "./components/Players";
 
 const App = () => {
   const [state, setState] = useState({
     web3: null,
     contract: null,
   });
+  const [address, setAddress] = useState(null);
 
   useEffect(() => {
     const init = async () => {
@@ -22,6 +24,7 @@ const App = () => {
           Lottery.abi,
           deployedNetwork && deployedNetwork.address
         );
+        setAddress(deployedNetwork.address)
         setState({ web3, contract: instance });
       } catch (error) {
         alert("Falied to load web3 or contract.");
@@ -33,7 +36,8 @@ const App = () => {
 
   return (
     <div className="App">
-     <Manager state={state}></Manager>
+    {/* <Manager state={state}></Manager>*/}
+    <Players state = {state} address = {address}></Players>
     </div>
   );
 };

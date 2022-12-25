@@ -44,7 +44,7 @@ const Manager = ({ state }) => {
             if (e.message.includes("You are not the manager"))
                 setLwinner("You are not the manager");
 
-            else if (e.message.includes("At least 3 person needed to start a lottery")) setLwinner("There are less than three players");
+            else if (e.message.includes("At least 3 person needed to start a lottery")) setLwinner("At least 3 person needed to start a lottery");
             else setLwinner("No winner yet");
         }
 
@@ -64,7 +64,7 @@ const Manager = ({ state }) => {
                     </button>
                 </li>
                 <li className="list-group-item">
-                    <b>Balnace : </b> {cbalance} ETH
+                    <b>Contract Balance : </b> {cbalance} ETH
                     <button className="button1" onClick={contractBalance}>
                         Click For Balance
                     </button>
