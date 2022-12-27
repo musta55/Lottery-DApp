@@ -3,11 +3,23 @@ import React, {useEffect, useState} from "react";
 const Players = ({state, address}) => {
     const [account,setAccount] = useState("No account connected");
     const [regesteredPlayers, setRegesteredPlayers] = useState([]);
+    const [reload,setReload] = useState(false);
+    
 
+    const reloadEffect = () =>{
+        setReload(!reload);
+    }
+    const setAccountListener = (provider)=>
+    {
+        provider.on("accountsChanged",(accounts) => {
+            setAccount(accounts[0]);
+        })
+    }
     useEffect(()=> {
         const getAccounts = async () => {
             const {web3} = state;
             const accounts = await web3.eth.getAccounts();
+            setAccountListener(web3.givenProvider);
             setAccount(accounts[0]);
         }
         state.web3 && getAccounts(); 
@@ -30,7 +42,7 @@ const Players = ({state, address}) => {
                 )
                     console.log(regesteredPlayers);
                     setRegesteredPlayers(regesteredPlayers);
-    
+                    reloadEffect();
             }
             catch(e)
             {
@@ -41,7 +53,7 @@ const Players = ({state, address}) => {
         }
 
         state.contract && getPlayers() ;
-    },[state, state.contract]);
+    },[state, state.contract,reload]);
 
     return (
         <>
@@ -51,7 +63,7 @@ const Players = ({state, address}) => {
                 <b>Connected account :</b> {account}
               </li>
               <li className="list-group-item">
-                <b>Please pay 1 ether on this contract address : </b> {address}
+                <b>Please pay 0.0001 ether/goerli on this contract address : </b> {address}
               </li>
               <li className="list-group-item">
                 <b>Registerd Players </b>:

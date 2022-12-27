@@ -7,11 +7,18 @@ const Manager = ({ state }) => {
     const [cbalance, setCbalance] = useState(0);
     const [lwinner, setLwinner] = useState("No winner yet");
 
+    const setAccountListener = (provider)=>
+    {
+        provider.on("accountsChanged",(accounts) => {
+            setAccount(accounts[0]);
+        })
+    }
     useEffect(() => {
         const getAccount = async () => {
             const { web3 } = state;
             const accounts = await web3.eth.getAccounts();
             console.log("Account holo " + accounts);
+            setAccountListener(web3.givenProvider);
             setAccount(accounts[0]);
         };
         state.web3 && getAccount();
@@ -64,7 +71,7 @@ const Manager = ({ state }) => {
                     </button>
                 </li>
                 <li className="list-group-item">
-                    <b>Contract Balance : </b> {cbalance} ETH
+                    <b>Contract Balance : </b> {cbalance} Wei
                     <button className="button1" onClick={contractBalance}>
                         Click For Balance
                     </button>
