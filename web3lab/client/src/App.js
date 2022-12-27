@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import getWeb3 from "./getWeb3";
-import Lottery from "./contracts/Lottery.json";  // abi of lottery smart contract
+import Lottery from "./contracts/lotteryApp.json";  // abi of lottery smart contract
 import "./App.css";
-// import Manager from "./components/Manager.js";
+import Manager from "./components/Manager.js";
 import Players from "./components/Players";
-
+import { Route, Link } from 'react-router-dom';
+import Intro from './components/Intro';
 const App = () => {
   const [state, setState] = useState({
     web3: null,
@@ -35,10 +36,46 @@ const App = () => {
   }, []);
 
   return (
-    <div className="App">
-    {/* <Manager state={state}></Manager>*/}
-    <Players state = {state} address = {address}></Players>
-    </div>
+    <>
+     <nav className="navbar navbar-expand-lg navbar">
+        <div className="container-fluid">
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link to="/" className="nav-link navtext" aria-current="page">
+                  Lottery System
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  to="/manager"
+                  className="nav-link navtext"
+                  aria-current="page"
+                >
+                  Manger
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/players" className="nav-link navtext">
+                  Player
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <Route exact path="/">
+        <Intro></Intro>
+      </Route>
+      <Route path="/manager">
+        <Manager state={state} />
+      </Route>
+      <Route path="/players">
+        <Players address={address} state={state} />
+      </Route>
+    </>
+
   );
 };
 export default App;
