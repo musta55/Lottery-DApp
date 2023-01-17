@@ -22,4 +22,7 @@ Step 6:  Run the frontend
 To run the react file, 
 npm install
 // You can add gitignore
+
+Step 7: 
+
 npm start
