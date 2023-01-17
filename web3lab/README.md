@@ -24,5 +24,4 @@ npm install
 // You can add gitignore
 
 Step 7: 
-
 npm start
