@@ -1,5 +1,9 @@
 Prerequisits: Install git, vscode, ganache, metamask.
+
+
 Step1: Clone the repo
+
+
 Step 2: Install truffle through npm
 npm i -g truffle
 
