@@ -16,6 +16,8 @@ truffle migrate --reset     *Make sure you delete contract.json file in client f
 
 step 5: Setup metamask wallet
 copy accounts from ganache account to metamask by  "Import Account with private key"
+
+
 Step 6:  Run the frontend
 To run the react file, 
 npm install
