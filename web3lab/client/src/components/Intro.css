@@ -1,9 +1,9 @@
-h1 {
-    margin-left: 300px;
+h3 {
+    margin-left: 30px;
     color: #343434;
     font-weight: normal;
     font-family: "Ultra", sans-serif;
-    font-size: 50px;
+    font-size: 30px;
     line-height: 42px;
     text-transform: uppercase;
     text-shadow: 0 2px white, 0 3px #777;
@@ -33,9 +33,35 @@ h1 {
   .container {
     font-family: arial;
     font-size: 24px;
-    margin: 45px;
+    margin: 45px 0px 0px 45px;
     padding: 20px;
-    width: 1350px;
+    width: 550px;
     height: 200px;
     outline: dashed 1px black;
   }
+  .button {
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+    background-color: #2980b9 ;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .button:hover {
+    background-color:  #0a2f48;
+  }
+  
+  .button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5);
+  }
+  

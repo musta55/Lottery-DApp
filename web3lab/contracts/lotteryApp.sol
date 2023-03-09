@@ -67,8 +67,16 @@ contract lotteryApp {
     }
 }
 
-// Deployed using truffle
-//  0x0aCbADC223585C43dF31f81265d412f90e160Dd7
-
-// Custom Address in ganache
-//  0xbA7F90e9737d62234376Df31c5a8810d0e249e1C
+//    Deploying 'lotteryApp'
+//    ----------------------
+//    > transaction hash:    0xa767348175e481ae026682319030fba19d12458c6e392bc059aee83c1b878b36
+//    > Blocks: 1            Seconds: 8
+//    > contract address:    0x344c7D718534Bcec6677aD499A282EfeB041E6B2
+//    > block number:        8622418
+//    > block timestamp:     1678334724
+//    > account:             0x026D2c1e816a206f45A9919D75564f303B6D1DD9
+//    > balance:             0.267928244047637065
+//    > gas used:            781275 (0xbebdb)
+//    > gas price:           10.185440139 gwei
+//    > value sent:          0 ETH
+//    > total cost:          0.007957629744597225 ETH
